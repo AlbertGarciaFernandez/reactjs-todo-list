@@ -1,0 +1,20 @@
+.buttonstyle {
+    display: flex;
+    margin-top: auto;
+    padding: 20px 20px;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0)
+      linear-gradient(rgba(229, 232, 235, 0.392) 0%, rgb(255, 255, 255) 20%)
+      repeat scroll 0% 0%;
+  
+button {
+    font-size: 16px;
+      font-weight: 500;
+      background: none;
+      border: none;
+      color: lightgray;
+      &:hover {
+        color: rgb(40, 40, 40);
+      }
+    }
+  }
