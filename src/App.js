@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 import Form from "./components/Form/Form";
 import TodoList from "./components/TodoList/TodoList";
-
 
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
-  
+
   const filterHandler = () => {
     switch(status){
       case 'completed':
@@ -43,30 +42,29 @@ function App() {
   useEffect(() => {
     getLocalTodos();
   }, []);
-  
+
   useEffect(() => {
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
-  
-  
+
   return (
     <div className="App">
       <header>
         <h1>TODO List </h1>
       </header>
-      <Form 
-      inputText={inputText} 
-      todos={todos} 
-      setTodos={setTodos} 
+      <Form
+      inputText={inputText}
+      todos={todos}
+      setTodos={setTodos}
       setInputText={setInputText}
-      setStatus={setStatus}
-      
       />
+
       <TodoList
-      filteredTodos={filteredTodos} 
-      setTodos={setTodos} 
-      todos={todos} 
+      filteredTodos={filteredTodos}
+      setTodos={setTodos}
+      todos={todos}
+      setStatus={setStatus}
       />
     </div>
   );

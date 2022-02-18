@@ -1,0 +1,26 @@
+@import "./components/Form/Form.scss";
+@import "./components/Todo/Todo.scss";
+@import "./components/TodoList/TodoList.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(120deg, #65abf6 0%, #fda085 100%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+header {
+    font-size: 2rem;
+}
+.fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
