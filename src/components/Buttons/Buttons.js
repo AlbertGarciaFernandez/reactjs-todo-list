@@ -1,11 +1,12 @@
 import React from 'react';
+import "./Buttons.scss";
 
 function Buttons ({setStatus}) {
     const statusHandler = (e) => {
         setStatus(e.target.value);
     }
     return(
-    <div>
+    <div className='buttonstyle'>
         {/* <li >ASAD</li> */}
         <button type="button" onClick={statusHandler} value="All">
             All

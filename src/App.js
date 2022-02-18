@@ -63,10 +63,7 @@ function App() {
           </button>
         </div>
       
-      <Form 
-      inputText={inputText} 
-      todos={todos} 
-      setTodos={setTodos} 
+      
       <Form
       inputText={inputText}
       todos={todos}
