@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Todo.scss";
 
 function Todo ({text, todo, todos, setTodos}){
     const deleteHandler = () => {
@@ -18,13 +19,16 @@ function Todo ({text, todo, todos, setTodos}){
 
 return (
     <div className="todo">
-        <li className={`todo-item ${todo.completed ? "completed" : "" }`}>{text}</li>
-        <button onClick={completeHandler} type="button" className="complete-btn">
+        <section className="todo-item">
+        <button onClick={completeHandler} type="button" className="btn">
             <i className="fas fa-check" />
         </button>
-        <button onClick={deleteHandler} type="button" className="trash-btn">
-            <i className="fas fa-trash" />
+        <li className={`todo-item ${todo.completed ? "completed" : "" }`}>{text}</li>
+        <button onClick={deleteHandler} type="button" className="btn">
+            <i className="fas fa-trash-alt" />
         </button>
+        </section>
+        
     </div>
 )
 }

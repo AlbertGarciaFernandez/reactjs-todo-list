@@ -1,5 +1,7 @@
 import React from 'react'
 import Todo from '../Todo/Todo'
+import "./TodoList.scss";
+
 
 function TodoList ({todos, setTodos, filteredTodos }) {
     

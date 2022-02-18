@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+// import "./App.css";
 import Form from "./components/Form/Form";
 import TodoList from "./components/TodoList/TodoList";
+import "./sass/index.scss";
 
 
 
@@ -51,10 +52,18 @@ function App() {
   
   
   return (
-    <div className="App">
+    <main className="App">
       <header>
-        <h1>TODO List </h1>
+      <img src="https://www.nationalgeographic.com.es/medio/2021/07/01/glory-of-damavand-and-milky-way_710ab66c_1348x890.jpg" alt="header-muntain" />
       </header>
+      <section className="list-todo">
+      <div className="header-list">
+        <h1>TODO List </h1>
+          <button className="" type="button">
+            <span className="material-icons-outlined md-48">dark_mode</span>
+          </button>
+        </div>
+      
       <Form 
       inputText={inputText} 
       todos={todos} 
@@ -68,7 +77,9 @@ function App() {
       setTodos={setTodos} 
       todos={todos} 
       />
-    </div>
+      </section>
+    </main>
+    
   );
 }
 

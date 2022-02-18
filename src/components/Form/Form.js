@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Form.scss";
 
 function Form({setInputText, todos, setTodos, inputText, setStatus}) {
     const inputTextHandler = (e) => {
@@ -15,7 +16,7 @@ function Form({setInputText, todos, setTodos, inputText, setStatus}) {
         setStatus(e.target.value);
     }
     return (
-    <form>
+    <form className="form-input">
     <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
     <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square" />
