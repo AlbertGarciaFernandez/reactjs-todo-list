@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Form.scss";
 
-function Form({setInputText, todos, setTodos, inputText, setStatus}) {
+function Form({setInputText, todos, setTodos, inputText}) {
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
     };
@@ -12,24 +12,12 @@ function Form({setInputText, todos, setTodos, inputText, setStatus}) {
         ]);
         setInputText("");
     };
-    const statusHandler = (e) => {
-        setStatus(e.target.value);
-    }
     return (
     <form className="form-input">
     <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
-    <button onClick={submitTodoHandler} className="todo-button" type="submit">
-        <i className="fas fa-plus-square" />
-    </button>
-    <div className="select">
-        <select onBlur={statusHandler} name="todos" className="filter-todo">
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="uncompleted">Uncompleted</option>
-        </select>
-    </div>
+    <button onClick={submitTodoHandler} className="todo-button" type="submit" />
     </form>
     )
 }
 
-export default Form
+export default Form;
