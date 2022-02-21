@@ -12,6 +12,7 @@ function Form({setInputText, todos, setTodos, inputText}) {
         ]);
         setInputText("");
     };
+
     return (
     <form className="form-input">
     <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />

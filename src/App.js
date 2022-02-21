@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+
 // import "./App.css";
 import "./App.scss";
 import Form from "./components/Form/Form";
@@ -51,6 +58,7 @@ function App() {
   }, [todos, status]);
 
   return (
+    <Router>
     <main className="App">
       <header>
       <img src="https://www.nationalgeographic.com.es/medio/2021/07/01/glory-of-damavand-and-milky-way_710ab66c_1348x890.jpg" alt="header-muntain" />
@@ -62,24 +70,26 @@ function App() {
             <span className="material-icons-outlined md-48">dark_mode</span>
           </button>
         </div>
-      
-      
+       
       <Form
       inputText={inputText}
       todos={todos}
       setTodos={setTodos}
       setInputText={setInputText}
       />
-
+    <Switch>
+      <Route /* path={`/${status}`} */ >
       <TodoList
       filteredTodos={filteredTodos}
       setTodos={setTodos}
       todos={todos}
       setStatus={setStatus}
       />
+      </Route>
+    </Switch>
       </section>
     </main>
-    
+    </Router>
   );
 }
 

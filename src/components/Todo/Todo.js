@@ -16,7 +16,7 @@ function Todo ({text, todo, todos, setTodos}){
         })
         );
     };
-
+    
 return (
     <div className="todo">
         <section className="todo-item">

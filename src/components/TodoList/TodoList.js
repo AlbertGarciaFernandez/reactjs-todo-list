@@ -4,7 +4,6 @@ import "./TodoList.scss";
 import Buttons from "../Buttons/Buttons";
 
 function TodoList ({todos, setTodos, filteredTodos, setStatus }) {
-
   return (
     <div className="todo-container">
         <ul className="todo-list">
@@ -18,7 +17,9 @@ function TodoList ({todos, setTodos, filteredTodos, setStatus }) {
                 />
             ))}
               <Buttons
+                todos={todos}
                 setStatus={setStatus}
+                setTodos={setTodos}
                 />
         </ul>
     </div>
