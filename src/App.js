@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+
 // import "./App.css";
 import "./App.scss";
 import Form from "./components/Form/Form";
@@ -57,6 +64,7 @@ function App() {
   }
 
   return (
+    <Router>
     <main className={themeDark? classNames("dark-mode") : "App"}>
       <header>
       <img src="https://www.nationalgeographic.com.es/medio/2020/06/30/dark-night-in-pyrenees-mountains_3dc0fd2b_1332x2000.jpg" alt="header-muntain" />
@@ -68,8 +76,7 @@ function App() {
             <span className="material-icons-outlined md-48">{themeDark ? "light_mode" : "dark_mode"}</span>
           </button>
         </div>
-      
-      
+       
       <Form
       inputText={inputText}
       todos={todos}
@@ -77,16 +84,19 @@ function App() {
       setInputText={setInputText}
       theme={themeDark}
       />
-
+    <Switch>
+      <Route /* path={`/${status}`} */ >
       <TodoList
       filteredTodos={filteredTodos}
       setTodos={setTodos}
       todos={todos}
       setStatus={setStatus}
       />
+      </Route>
+    </Switch>
       </section>
     </main>
-    
+    </Router>
   );
 }
 

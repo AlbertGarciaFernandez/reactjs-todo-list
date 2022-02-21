@@ -23,7 +23,9 @@ function TodoList ({todos, setTodos, filteredTodos, setStatus, theme }) {
             </div>
             <div>
               <Buttons
+                todos={todos}
                 setStatus={setStatus}
+                setTodos={setTodos}
                 />
                 
         
