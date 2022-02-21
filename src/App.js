@@ -5,6 +5,7 @@ import Form from "./components/Form/Form";
 import TodoList from "./components/TodoList/TodoList";
 import "./sass/index.scss";
 
+const classNames = require("classnames");
 
 function App() {
   // State stuff
@@ -12,6 +13,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [themeDark, setThemeDark] = useState(false);
 
   const filterHandler = () => {
     switch(status){
@@ -50,16 +52,20 @@ function App() {
     saveLocalTodos();
   }, [todos, status]);
 
+  function changeTheme() {
+    setThemeDark(!themeDark);
+  }
+
   return (
-    <main className="App">
+    <main className={themeDark? classNames("dark-mode") : "App"}>
       <header>
-      <img src="https://www.nationalgeographic.com.es/medio/2021/07/01/glory-of-damavand-and-milky-way_710ab66c_1348x890.jpg" alt="header-muntain" />
+      <img src="https://www.nationalgeographic.com.es/medio/2020/06/30/dark-night-in-pyrenees-mountains_3dc0fd2b_1332x2000.jpg" alt="header-muntain" />
       </header>
       <section className="list-todo">
       <div className="header-list">
         <h1>TODO List </h1>
-          <button className="" type="button">
-            <span className="material-icons-outlined md-48">dark_mode</span>
+          <button className="" type="button" onClick={changeTheme}>
+            <span className="material-icons-outlined md-48">{themeDark ? "light_mode" : "dark_mode"}</span>
           </button>
         </div>
       
@@ -69,6 +75,7 @@ function App() {
       todos={todos}
       setTodos={setTodos}
       setInputText={setInputText}
+      theme={themeDark}
       />
 
       <TodoList

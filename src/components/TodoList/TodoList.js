@@ -3,9 +3,10 @@ import Todo from '../Todo/Todo'
 import "./TodoList.scss";
 import Buttons from "../Buttons/Buttons";
 
-function TodoList ({todos, setTodos, filteredTodos, setStatus }) {
+function TodoList ({todos, setTodos, filteredTodos, setStatus, theme }) {
 
   return (
+    <div>
     <div className="todo-container">
         <ul className="todo-list">
             {filteredTodos.map((todo) => (
@@ -15,12 +16,18 @@ function TodoList ({todos, setTodos, filteredTodos, setStatus }) {
                 todos={todos}
                 key={todo.id}
                 todo={todo}
+                theme={theme}
                 />
             ))}
+          </ul>
+            </div>
+            <div>
               <Buttons
                 setStatus={setStatus}
                 />
-        </ul>
+                
+        
+    </div>
     </div>
   )
 }

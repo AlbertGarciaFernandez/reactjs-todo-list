@@ -7,7 +7,7 @@
     padding: 30px;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 1em;
     
 
     input {
@@ -16,10 +16,16 @@
         color: rgb(40, 40, 40);
         border: none;
         outline: none
-
+        
         
     }
+    
 }
 
+.todo-button {
+    
+        display: none;
+    
+}
 
 

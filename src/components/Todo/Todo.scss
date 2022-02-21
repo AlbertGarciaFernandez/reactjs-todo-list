@@ -28,3 +28,14 @@
 
 
     
+.dark-mode {
+    .todo-item {
+        // background:  linear-gradient(#000000, #616593);
+        background-color: #494b61a1;
+    li {
+        background-color: #494b61a1!important;
+    }
+
+    .btn {
+        color: white;
+    }}}
