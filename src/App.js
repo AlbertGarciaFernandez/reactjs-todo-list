@@ -5,8 +5,6 @@ import {
   Route
 } from "react-router-dom";
 
-
-// import "./App.css";
 import "./App.scss";
 import Form from "./components/Form/Form";
 import TodoList from "./components/TodoList/TodoList";
@@ -18,7 +16,7 @@ function App() {
   // State stuff
   const [inputText, setInputText] = useState ("");
   const [todos, setTodos] = useState([]);
-  const [status, setStatus] = useState("all");
+  const [status, setStatus] = useState(window.location.pathname.substring(1));
   const [filteredTodos, setFilteredTodos] = useState([]);
   const [themeDark, setThemeDark] = useState(false);
 
@@ -76,7 +74,7 @@ function App() {
             <span className="material-icons-outlined md-48">{themeDark ? "light_mode" : "dark_mode"}</span>
           </button>
         </div>
-       
+
       <Form
       inputText={inputText}
       todos={todos}
@@ -85,7 +83,7 @@ function App() {
       theme={themeDark}
       />
     <Switch>
-      <Route /* path={`/${status}`} */ >
+    <Route >
       <TodoList
       filteredTodos={filteredTodos}
       setTodos={setTodos}

@@ -1,10 +1,10 @@
 import React from 'react'
+
 import Todo from '../Todo/Todo'
 import "./TodoList.scss";
 import Buttons from "../Buttons/Buttons";
 
 function TodoList ({todos, setTodos, filteredTodos, setStatus, theme }) {
-
   return (
     <div>
     <div className="todo-container">
@@ -19,7 +19,7 @@ function TodoList ({todos, setTodos, filteredTodos, setStatus, theme }) {
                 theme={theme}
                 />
             ))}
-          </ul>
+        </ul>
             </div>
             <div>
               <Buttons
@@ -27,9 +27,7 @@ function TodoList ({todos, setTodos, filteredTodos, setStatus, theme }) {
                 setStatus={setStatus}
                 setTodos={setTodos}
                 />
-                
-        
-    </div>
+            </div>
     </div>
   )
 }
