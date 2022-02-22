@@ -25,7 +25,7 @@ return (
         </button>
         <li className={`todo-item ${todo.completed ? "completed" : "" }`}>{text}</li>
         <button onClick={deleteHandler} type="button" className="btn">
-            <i className="fas fa-trash-alt" />
+            <i className="fas fa-close" />
         </button>
         </section>
         

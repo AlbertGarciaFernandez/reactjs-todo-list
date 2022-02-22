@@ -14,7 +14,21 @@ button {
       border: none;
       color: black;
       &:hover {
-        color: rgb(40, 40, 40);
+        color: rgb(130, 117, 117);
       }
     }
   }
+
+  .dark-mode{
+    .buttonstyle {
+        background: #ffffff06;
+        border-radius: 8px;
+        
+    }
+    button {
+      color: white;
+      &:hover {
+        color: rgb(43, 41, 41);
+      }
+}
+}
